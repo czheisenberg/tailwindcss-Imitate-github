@@ -1,30 +1,26 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <!-- <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link> | 
+    <router-link to="/header">header</router-link>
+  <router-view/> -->
+  <div class="flex flex-col min-h-screen">
+    <Header></Header>
+
+    <Footer></Footer>
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import { defineComponent } from 'vue';
+import Header from './views/HeaderView.vue'; // @ is an alias to /src
+import Footer from './views/FooterView.vue';
 
-nav {
-  padding: 30px;
-}
+export default defineComponent({
+  name: 'HomeView',
+  components: {
+    Header,
+    Footer
+  },
+});
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+</script>
